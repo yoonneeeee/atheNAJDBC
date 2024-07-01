@@ -21,14 +21,17 @@ public class MemberView {
 			choice = this.printMainMenu();
 			switch(choice) {
 				case 0 : break 끝;
+		// 1. 회원 가입
 				case 1 : 
 					Member member = this.inputMember();
 					mController.insertMember(member);
 					break;
+		// 2. 회원 전체 조회
 				case 2 : 
 					List<Member> mList = mController.listMember();
 					this.displayMemberList(mList);
 					break;
+		// 3. 회원 검색(아이디로 검색)
 				case 3 : 
 					String memberId = this.inputMemberId();
 					member = mController.printOneMember(memberId);
